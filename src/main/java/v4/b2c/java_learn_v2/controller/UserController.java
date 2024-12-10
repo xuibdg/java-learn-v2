@@ -48,6 +48,28 @@ public class UserController {
         userRepository.deleteById(userId);  // Simpan pengguna ke database
         return "redirect:/users";  // Redirect ke daftar pengguna setelah disimpan
     }
+
+    @GetMapping("/{userId}/edit")
+    public String editUserForm(@PathVariable String userId, Model model) {
+        // Ambil data pengguna berdasarkan ID
+        UserEntity user = userRepository.findById(userId).orElse(null);
+        model.addAttribute("user", user); // Kirim data pengguna ke view
+        return "user-form"; // Gunakan form yang sama untuk Create & Update
+    }
+
+    @PostMapping("/{userId}")
+    public String updateUser(@PathVariable String userId, @ModelAttribute UserEntity userEntity) {
+        // Cari pengguna lama berdasarkan ID
+        UserEntity existingUser = userRepository.findById(userId).orElse(null);
+        if (existingUser != null) {
+            // Update data pengguna
+            existingUser.setEmail(userEntity.getEmail());
+            existingUser.setFullname(userEntity.getFullname());
+            userRepository.save(existingUser); // Simpan data yang diperbarui ke database
+        }
+        return "redirect:/users"; // Redirect kembali ke daftar pengguna
+    }
+
 }
 
 

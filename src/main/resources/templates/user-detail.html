@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Detail Pengguna</title>
+    <title th:text="${user.userId} != null ? 'Edit Pengguna' : 'Tambah Pengguna Baru'"></title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-<h2>Detail Pengguna</h2>
-<div>
-    <p><strong>User ID:</strong> <span th:text="${user.userId}"></span></p>
-    <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
-    <p><strong>Full Name:</strong> <span th:text="${user.fullname}"></span></p>
-</div>
+<h2 th:text="${user.userId} != null ? 'Edit Pengguna' : 'Tambah Pengguna Baru'"></h2>
+
+<!-- Form untuk Create atau Update pengguna -->
+<form th:action="${user.userId} != null ? @{/users/{userId}(userId=${user.userId})} : @{/users}" method="post" th:object="${user}">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" th:field="*{userId}" th:readonly="${user.userId != null}" required/><br/>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" required/><br/>
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" th:field="*{fullname}" required/><br/>
+
+    <button type="submit" th:text="${user.userId} != null ? 'Update' : 'Save'"></button>
+</form>
+
+<div class="navigation-buttons">
 <a href="/users">Back to User List</a>
+</div>
 </body>
 </html>

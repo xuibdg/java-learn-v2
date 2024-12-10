@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Daftar Pengguna</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 <h2>Daftar Pengguna</h2>
@@ -17,10 +18,14 @@
         <td th:text="${user.email}"></td>
         <td th:text="${user.fullname}"></td>
         <td>
+            <!-- Tautan ke halaman detail -->
             <a th:href="@{/users/{userId}(userId=${user.userId})}">Details</a>
         </td>
     </tr>
 </table>
-<a href="/users/new">Create New User</a>
+<!-- Tautan ke halaman form pendaftaran pengguna baru -->
+<div class="navigation-buttons">
+<a th:href="@{/users/new}">Create New User</a>
+</div>
 </body>
 </html>

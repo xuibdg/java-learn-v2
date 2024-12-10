@@ -1,0 +1,225 @@
+/* Reset margin dan padding untuk semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in-out; /* Animasi tampilan masuk */
+}
+
+/* Animasi Tampilan Masuk */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #111; /* Hitam */
+    font-size: 2rem;
+    margin: 20px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling untuk form */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #333; /* Hitam */
+    animation: fadeIn 1s ease-in-out;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555; /* Abu */
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    border-color: #333; /* Hitam */
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+}
+
+form button {
+    background-color: #333; /* Hitam */
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+form button:hover {
+    background-color: #555; /* Abu */
+    transform: scale(1.05);
+}
+
+/* Styling untuk tabel */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+table th,
+table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #333; /* Hitam */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e8e8e8;
+    transition: background-color 0.3s ease;
+}
+
+table a {
+    color: #333; /* Hitam */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+table a:hover {
+    color: #555; /* Abu */
+    text-decoration: underline;
+}
+
+/* Styling untuk link */
+a {
+    color: #333; /* Hitam */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #555; /* Abu */
+    text-decoration: underline;
+}
+
+/* Tombol Navigasi */
+./* Tombol Navigasi */
+ .navigation-buttons {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 20px auto; /* Jarak ke elemen atas/bawah */
+     gap: 20px; /* Jarak antar tombol */
+ }
+
+ .navigation-buttons a {
+     background-color: #333; /* Hitam */
+     color: white;
+     padding: 10px 20px;
+     border-radius: 5px;
+     text-decoration: none;
+     font-size: 1rem;
+     font-weight: bold;
+     text-align: center;
+     transition: background-color 0.3s ease, transform 0.2s ease;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+ }
+
+ .navigation-buttons a:hover {
+     background-color: #555; /* Abu */
+     transform: scale(1.05);
+     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat saat hover */
+ }
+
+/* Halaman Detail Pengguna */
+.detail-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #333; /* Hitam */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.detail-container p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.detail-container p strong {
+    color: #333; /* Hitam */
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
