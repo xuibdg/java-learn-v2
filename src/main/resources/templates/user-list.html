@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Daftar Pengguna</title>
+</head>
+<body>
+<h2>Daftar Pengguna</h2>
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Email</th>
+        <th>Full Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.userId}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.fullname}"></td>
+        <td>
+            <a th:href="@{/users/{userId}(userId=${user.userId})}">Details</a>
+        </td>
+    </tr>
+</table>
+<a href="/users/new">Create New User</a>
+</body>
+</html>
