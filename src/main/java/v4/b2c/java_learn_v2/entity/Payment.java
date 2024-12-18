@@ -10,6 +10,7 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private BigDecimal amount;
 
     public BigDecimal getAmount() {
         return amount;
@@ -18,6 +19,4 @@ public class Payment {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
-
-    private BigDecimal amount;
 }

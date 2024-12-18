@@ -3,6 +3,7 @@ package v4.b2c.java_learn_v2.dto;
 import java.math.BigDecimal;
 
 public class OrderAndPaymentRequest {
+    //field
     private String orderDescription;
     private BigDecimal paymentAmount;
 

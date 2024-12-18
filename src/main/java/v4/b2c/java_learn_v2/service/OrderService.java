@@ -4,5 +4,7 @@ import v4.b2c.java_learn_v2.dto.OrderAndPaymentRequest;
 
 public interface OrderService {
 
-    String processOrder(OrderAndPaymentRequest request);
+    String processTransactionOrder(OrderAndPaymentRequest request);
+
+    String updateProcessOrder(Long id, OrderAndPaymentRequest request);
 }
